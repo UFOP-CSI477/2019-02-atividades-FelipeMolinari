@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastrar Produto</title>
+</head>
+<body>
+    <h1>Cadastro de Produtos</h1><br>
+    <form>
+         <label for="nome_prod">Nome:</label>
+         <input type="text" name="nome" id="nome_prod"><br>
+        <div>
+            <label for="peso_prod">Peso:</label>
+            <input type="text" name="peso_produto" id="peso">
+
+            
+            <input type="radio" name="peso" id="kg" value="Kg">
+            <label for="kg">Kg</label>
+
+            <input type="radio" name="peso" id="g" value="g">
+            <label for="g">g</label>
+
+            <input type="radio" name="peso" id="mg" value="mg">
+            <label for="mg">mg</label>
+
+        </div>
+        
+        <br>
+        <label for="valor_produto">Valor: </label>
+        <input type="text" name="valor_produto">
+        <br>
+        <label for="codigo_produto">Codigo: </label>
+        <input type="text" id="codigo" name="codigo_produto">
+
+        <br>
+        <label for="estoque_prod">Estoque Inicial: </label>
+        <input type="number" max="999" name="estoque_prod">
+
+        <br>
+        <label for="mercado">Mercado: </label>
+
+        <input type="radio" name="mercado" id="interno" value="int">Interno 
+        
+        <input type="radio" name="mercado" id="externo" value="ext">Externo 
+
+        <br>
+
+        <select name="fornecedor" id="fornecedor_prod">
+            <option disabled selected value="0">Selecione</option>
+            <option value="selecione">Selecione</option>
+            <option value="casasBahia">casasBahia</option>
+            <option value="Americanas">Americanas</option>
+            <option value="Kanui">Kanui</option>
+            <option value="Seila">Seila</option>
+        </select>
+    </form>
+<br>
+    <button>Cadastrar produto</button><br>
+    <a href="./index.html">Voltar</a>
+</body>
+</html>
