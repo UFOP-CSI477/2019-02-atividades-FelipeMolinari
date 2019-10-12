@@ -1,0 +1,41 @@
+    .form_input,
+    select {
+        width: 50%;
+        display: block;
+        margin: 10px 0;
+        box-sizing: border-box;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        padding: 10px 3px;
+    }
+
+    .container {
+        display: inline-flex;
+        position: relative;
+        padding-left: 10px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .button_cadastrar {
+        width: 50%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    h1 {
+        width: 50%;
+        text-align: center;
+        background-color: #ccc;
+        color: #ffffff;
+    }
+
+    .button_cadastrar:hover {
+        background-color: #45a049;
+    }

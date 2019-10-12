@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./styles/cadastro.css">
+
+    <title>Cadastrar Produto</title>
+
+</head>
+
+<body>
+    <h1>Cadastro de Produtos</h1>
+    <form>
+        <label for="nome_prod">Nome:</label>
+        <input type="text" name="nome" id="nome_prod" class="form_input">
+
+
+        <div>
+            <label>Peso:</label>
+            <input type="text" name="peso_produto" class="form_input">
+
+            <label for="kg" class="container">
+                <input type="radio" name="peso" id="kg" value="Kg"> Kg</label>
+
+            <label for="g" class="container"><input type="radio" name="peso" id="g" value="g"> g</label>
+            <label for="mg" class="container">
+                <input type="radio" name="peso" id="mg" value="mg">mg
+            </label>
+        </div>
+
+
+        <label for="valor_produto">Valor: </label>
+        <input type="text" name="valor_produto" class="form_input">
+
+        <label for="codigo_produto">Codigo: </label>
+        <input type="text" id="codigo" name="codigo_produto" class="form_input">
+
+
+        <label for="estoque_prod">Estoque Inicial: </label>
+        <input type="number" max="999" name="estoque_prod" class="form_input">
+
+
+        <label for="mercado">Mercado: </label>
+
+        <input type="radio" name="mercado" id="interno" value="int">Interno
+
+        <input type="radio" name="mercado" id="externo" value="ext">Externo
+
+
+
+        <select name="fornecedor" id="fornecedor_prod">
+            <option disabled selected value="0">Selecione</option>
+            <option value="selecione">Selecione</option>
+            <option value="casasBahia">casasBahia</option>
+            <option value="Americanas">Americanas</option>
+            <option value="Kanui">Kanui</option>
+            <option value="Seila">Seila</option>
+        </select>
+    </form>
+
+    <input type="button" value="Cadastrar" class="button_cadastrar">
+</body>
+
+</html>

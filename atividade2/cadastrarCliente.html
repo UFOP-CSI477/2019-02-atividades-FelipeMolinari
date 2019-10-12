@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./styles/cadastro.css">
+
+    <title>Cadastrar Cliente</title>
+</head>
+
+<body>
+    <h1>Cadastro de Clientes</h1>
+    <form>
+        <label for="nome_cliente">Nome</label>
+        <input type="text" name="nome" id="nome_cliente" placeholder="Digite seu nome" class="form_input">
+
+        <label for="sobrenome_cliente">Sobrenome:</label>
+        <input type="text" name="sobrenome" id="sobrenome_cliente" placeholder="Digite seu sobrenome" class="form_input">
+
+        <div name="genero" id="generos_client">
+            <label for="genero">Genero: </label>
+            <label for="masculino" class="container">
+                <input type="radio" name="genero" id="masculino" value="M">Masculino
+
+            </label>
+
+
+            <label for="feminino" class="container">
+                <input type="radio" name="genero" id="feminino" value="F">Feminino
+
+            </label>
+
+            <label for="naobinario" class="container">
+                <input type="radio" name="genero" id="naobinario" value="NB">Não binário
+
+            </label>
+
+        </div>
+
+
+        <label for="nascimento" >Data Nascimento</label>
+        <input type="date" name="nascimento" id="nascimento_cliente" class="form_input">
+
+        <label for="país">País</label>
+        <select name="país" id="pais_cliente">
+            <option disabled selected value="0">Selecione</option>
+            <option value="brasil">Brasil</option>
+            <option value="indonesia">Indonesia</option>
+            <option value="usa">Estados Unidos</option>
+            <option value="canada">Canada</option>
+        </select>
+
+    </form>
+    <input type="button" value="Cadastrar" class="button_cadastrar">
+
+</body>
+
+</html>
