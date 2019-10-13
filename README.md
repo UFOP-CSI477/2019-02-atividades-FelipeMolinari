@@ -6,7 +6,7 @@
 
 ---
 
-- [ ] Incorporar ao Exercício 01 - CSS (puro)
+- [x] Incorporar ao Exercício 01 - CSS (puro)
 ---
 
 - [ ] Incorporar ao Exercício 01 - CSS/Bootstrap
