@@ -12,5 +12,10 @@
 - [ ] Incorporar ao Exercício 01 - CSS/Bootstrap
 ---
 
+- [x] Prática 1.
+
+---
+
+- [ ] Prática 1 extra. 
 
 Final :trophy:
