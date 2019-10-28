@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carrinho de rolimã</title>
+</head>
+<style>
+    h1 {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+
+
+    section {
+        display: block;
+    }
+
+
+    input[type="text"] {
+        height: 25px;
+        margin: 0 10px;
+        width: 300px;
+        border-radius: 5px;
+        padding: 5px
+    }
+
+    input[type="number"] {
+        text-align: center;
+        height: 25px;
+        margin: 0 10px;
+        width: 20%;
+        border-radius: 20px;
+        padding: 5px;
+    }
+
+    .sectionCompetidores {
+
+        margin: 0 0 20px 0;
+    }
+
+    .buttonAdicionarCompetidor {
+        border-radius: 50%;
+        background-color: tomato;
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        padding: 5px;
+        box-shadow: 1px 1px 0.5px .5px black;
+        text-decoration: none;
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .buttonAdicionarCompetidor:active {
+        box-shadow: none;
+
+    }
+
+
+    .bottonConfirmarCompetidores {
+        width: 100px;
+        text-align: center;
+        border-radius: 15px;
+        color: white;
+        background-color: navy;
+        align-self: center;
+    }
+
+
+
+    .adicionarCompetidoresDiv {
+        border: 2px solid bisque;
+        padding: 20px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 4px
+    }
+
+    .divTabela {
+        position: fixed;
+        margin: 0 30px 0 30px;
+        display: inline-block;
+
+
+    }
+
+    .divTabela table {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 600px;
+    }
+
+    thead tr th,
+    tbody tr td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    thead tr th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tbody tr:hover {
+        background-color: #ddd
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<body>
+    <h1>Corrida De Carrinho de Rolimã</h1>
+    <div class="adicionarCompetidoresDiv">
+        <div class="competidoresDiv" id="divPrinc">
+            <section class="sectionCompetidores">
+                <input type="text" name="nomeCompetidor" class="inputNomeCompetidor" placeholder="Nome Competidor">
+                <input type="number" name="tempoCompetidor" class="inputTempoCompetidor" placeholder="Tempo(s)">
+                <a class="buttonAdicionarCompetidor" href="./competidorContent.html"
+                    onclick="adicionarOuRemoverCompetidor(event, this)">+</a>
+            </section>
+        </div>
+        <input type="button" value="Confirmar" onclick="montaTabela()" class="bottonConfirmarCompetidores">
+    </div>
+
+    <div class="divTabela">
+        <section id="contentTable">
+            <table id="dynamicTable" class="table">
+                <thead>
+                    <tr>
+                        <th>Posição</th>
+                        <th>Largada</th>
+                        <th>Nome</th>
+                        <th>Tempo</th>
+                    </tr>
+                </thead>
+                <tbody id="dynamicTbody">
+
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+
+</body>
+
+<script>
+    let contadorDeCompetidores = 1;
+    const sectionElement = document.getElementById("divPrinc")
+
+    function validar(campo) {
+        let n = campo.value
+        
+        if (n.length == 0) {
+            // Erro
+            window.alert("Informe o valor corretamente!");
+
+            campo.value = "";
+            campo.focus();
+            return false;
+        }
+        // Correto
+        return true;
+    }
+
+    let adicionarOuRemoverCompetidor = (event, link) => {
+
+        event.preventDefault()
+        const nomeCompetidor = link.parentNode.children[0]
+        const tempoCompetidor = link.parentNode.children[1]
+        if (validar(nomeCompetidor) && validar(tempoCompetidor)) {
+
+            if (link.text == "+") {
+                adicionarElementoNovo(link)
+            } else {
+                removerElemento(link)
+            }
+        }
+    }
+    const removerElemento = link => {
+
+        link.parentElement.remove()
+        console.log(link)
+
+    }
+    const adicionarElementoNovo = link => {
+        fetch(link.href)
+            .then(resp => resp.text()).then(html => {
+                const newElement = document.createElement('section')
+                newElement.innerHTML = html
+                newElement.className = "sectionCompetidores"
+
+                sectionElement.appendChild(newElement)
+                link.text = "-"
+            })
+    }
+
+    const montaTabela = () => {
+
+
+        const competidoresNomes = document.getElementsByClassName("inputNomeCompetidor")
+        const competidoresTempo = document.getElementsByClassName("inputTempoCompetidor")
+
+        const table = document.getElementById("dynamicTable")
+        const arry = [];
+        for (let i = 0; i < competidoresTempo.length; i++) {
+            arry[i] = {
+                largada: i,
+                tempo: competidoresTempo[i].value
+            }
+        }
+        arry.sort((a, b) => a.tempo - b.tempo);
+
+        const tableBody = document.getElementById("dynamicTbody")
+
+
+        for (let i = 0; i < competidoresNomes.length; i++) {
+
+            const row = tableBody.insertRow(i)
+            row.id = `${i}`
+            row.className = "rowTabelaCompetidores"
+
+            const cellPosicao = row.insertCell(0)
+
+            arry.forEach((element, index) => {
+                if (element["largada"] == i) {
+                    cellPosicao.innerHTML = `${index + 1}`
+                }
+            })
+            const cellLargada = row.insertCell(1)
+            cellLargada.innerHTML = i + 1
+
+            const cellName = row.insertCell(2)
+            cellName.innerHTML = competidoresNomes[i].value
+
+            const cellTempo = row.insertCell(3)
+            cellTempo.innerHTML = competidoresTempo[i].value
+        }
+    }
+
+</script>
+
+</html>

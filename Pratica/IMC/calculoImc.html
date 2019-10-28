@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="br" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cálculo - validação com BS</title>
+
+    <link rel="stylesheet" href="../bootstrapdist/css/bootstrap.css">
+    <script src="calculaImc.js"></script>
+
+    <style>
+        body {
+            margin: 20px;
+        }
+
+        .divForm {
+            background-image: linear-gradient(to right, red , blue);
+            color:white;
+            padding: 20px;
+            width: 30%;
+            display: inline-block;
+            text-align: center;
+            border-radius: 4px;
+            
+        }
+
+        .divTabela {
+            display: inline-block;
+            margin: 20px;
+            width: 50%;
+            text-align: left;
+            position: fixed;
+        }
+
+        .divTabela table {
+            font-family: Arial, Helvetica, sans-serif;
+            
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        thead tr th,
+        tbody tr td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        thead tr th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            background-color:orchid ;
+            color: white;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div class="divForm">
+        <form name="dados">
+            <div id="grupo1" class="form-group ">
+                <label for="valor1">Peso (kg)</label>
+                <input type="number" name="valor1" id="valor1" value="" class="form-control">
+            </div>
+
+            <div id="grupo2" class="form-group ">
+                <label for="valor2">Altura(cm)</label>
+                <input type="number" name="valor2" id="valor2" value="" class="form-control">
+            </div>
+
+            <div id="resultadoImc" class="form-group ">
+                <label for="resultadoImc">IMC</label>
+                <input type="number" name="resultadoImc" id="resultado" value="" class="form-control" disabled>
+            </div>
+
+            <input type="button" value="Calcular" style="background: coral;
+                  border: coral;" onclick="calcular()" class="btn btn-primary">
+
+
+            <input type="reset" name="" value="Limpar" style="background:mediumaquamarine;
+                  border: mediumaquamarine; color: white;" class="btn btn-warning">
+
+        </form>
+    </div>
+    <div class="divTabela">
+        <table>
+            <thead>
+                <tr>
+                    <th>IMC</th>
+                    <th>Classificação</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyTabela">
+                <tr class="nivel1">
+                    <td>abaixo de 18,5</td>
+                    <td>Subnutrição</td>
+                </tr>
+                <tr class="nivel2">
+                    <td>Entre 18,5 e 24,9</td>
+                    <td>Peso Saudável</td>
+                </tr>
+                <tr class="nivel3">
+                    <td>Entre 25,0 e 29,9</td>
+                    <td>Sobrepeso</td>
+                </tr>
+                <tr class="nivel4">
+                    <td>Entre 30 e 34,9</td>
+                    <td>Obedidade grau 1</td>
+                </tr>
+                <tr class="nivel5">
+                    <td>Entre 35,0 e 39,9</td>
+                    <td>Obedidade grau 2</td>
+                </tr>
+                <tr class="nivel6">
+                    <td>Acima de 40</td>
+                    <td>Obedidade grau 3</td>
+                </tr>
+            </tbody>
+        </table>
+        <section id="pesoIdeal">
+
+        </section>
+
+    </div>
+
+</body>
+
+</html>
