@@ -16,6 +16,6 @@
 
 ---
 
-- [ ] Prática 1 extra. 
+- [x] Prática 1 extra. 
 
 Final :trophy:
