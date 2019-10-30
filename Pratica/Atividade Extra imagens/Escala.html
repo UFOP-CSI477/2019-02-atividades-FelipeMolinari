@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="br" dir="ltr">
+
+<head>
+    <title>Relacione as Figuras</title>
+    <script src="calculo.js"></script>
+</head>
+
+
+<style>
+    body {
+        margin: 20px;
+        align-items: center;
+    }
+
+    .img {
+        border: solid black 1px;
+        padding: 22.5px;
+    }
+
+    .quadrado {
+        grid-area: quadrado;
+    }
+
+    .triangulo {
+        grid-area: triangulo;
+    }
+
+    .circulo {
+        grid-area: circulo;
+    }
+
+    .retangulo {
+        grid-area: retangulo;
+    }
+
+    .FigurasPergunta {
+
+        vertical-align: middle;
+        display: grid;
+        grid-template-rows: 120px 1fr 120px 1fr;
+        grid-template-columns: 120px 120px;
+        grid-gap: 5px;
+        justify-items: center;
+        align-items: center;
+        grid-template-areas: 'quadrado triangulo'
+            'seletor1 seletor2'
+            'circulo retangulo'
+            'seletor4 seletor3'
+        ;
+    }
+
+    .seletor1 {
+        width: 120px;
+        grid-area: seletor1;
+    }
+
+    .seletor2 {
+        width: 120px;
+
+        grid-area: seletor2;
+    }
+
+    .seletor3 {
+        width: 120px;
+
+        grid-area: seletor3;
+    }
+
+    .seletor4 {
+        width: 120px;
+
+        grid-area: seletor4;
+    }
+
+    .certo{
+        background-color: forestgreen;
+    }
+    .errado{
+        background-color: red;
+    }
+</style>
+
+<body>
+    <div class="FigurasPergunta">
+        <div class="quadrado img naoselecionado">
+            <img src="https://images.vexels.com/media/users/3/139344/isolated/lists/04f2d79f761a2663177cb6ab3700a484-praca-quadrado-arredondado-icone.png"
+                width="75" height="75">
+        </div>
+        <select name="quadrado" class="seletor1 seletor" id="seletor1" onchange="changeSelect('seletor1')">
+            <option value="Selecione">Selecione</option>
+            <option value="Quadrado">Quadrado</option>
+            <option value="Retangulo">Retangulo</option>
+            <option value="Circulo">Circulo</option>
+            <option value="Triangulo">Triangulo</option>
+        </select>
+        <div class="triangulo img naoselecionado">
+            <img src="https://images.vexels.com/media/users/3/139373/isolated/lists/80b916e5ca4b15360dc28b0c1ea97b5f-triangulo.png"
+                width="75" height="75">
+        </div>
+        <select name="triangulo" class="seletor2 seletor" id="seletor2" onchange="changeSelect('seletor2')">
+            <option value="Selecione">Selecione</option>
+            <option value="Quadrado">Quadrado</option>
+            <option value="Retangulo">Retangulo</option>
+            <option value="Circulo">Circulo</option>
+            <option value="Triangulo">Triangulo</option>
+        </select>
+        <div class="retangulo img naoselecionado">
+            <img src="https://images.vexels.com/media/users/3/139256/isolated/lists/d238146fc3a2b6b70c792b5c55d91584-curso-de-forma-de-retangulo.png"
+                width="75" height="75">
+
+        </div>
+        <select name="retangulo" class="seletor3 seletor" id="seletor3" onchange="changeSelect('seletor3')">
+            <option value="Selecione">Selecione</option>
+            <option value="Quadrado">Quadrado</option>
+            <option value="Retangulo">Retangulo</option>
+            <option value="Circulo">Circulo</option>
+            <option value="Triangulo">Triangulo</option>
+        </select>
+
+        <div class="circulo img naoselecionado">
+            <img src="https://images.vexels.com/media/users/3/154555/isolated/lists/90ad55ae3d401c512fcac46846d2022d-mao-desenhado-circulo-icone.png"
+                width="75" height="75">
+        </div>
+
+        <select name="circulo" class="seletor4 seletor" id="seletor4" onchange="changeSelect('seletor4')">
+            <option value="Selecione">Selecione</option>
+            <option value="Quadrado">Quadrado</option>
+            <option value="Retangulo">Retangulo</option>
+            <option value="Circulo">Circulo</option>
+            <option value="Triangulo">Triangulo</option>
+        </select>
+    </div>
+
+
+</body>
+
+</html>
