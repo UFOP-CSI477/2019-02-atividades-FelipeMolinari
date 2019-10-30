@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jogo das palavras</title>
+    <script src="manageGame.js"></script>
+</head>
+<style>
+    .grupo{
+        display: flex;
+        border: solid black 1px;
+        width: 300px;
+        height: 400px;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        background-color: orange;
+        
+    }
+    .item{
+        background-color: wheat;
+        border: black solid 1px;
+        padding: 0px 0px 20px 0px;
+        margin: 5px;
+    }
+
+    .acerto{
+        background-color: green;
+    }
+    .errado{
+        background-color: red;
+    }
+
+    .resultado{
+        height:  40px;
+        width: 100%;
+        text-align: center;
+    }
+</style>
+<body>
+    <center>
+    <div class="conjunto_grupos">
+        <div class="grupo sabonete">
+            
+                
+            <label for="grupo1">Grupo 1: Selecione a imagem que não pertence ao grupo</label>
+            <section class="item" onclick="verificaSeFazParte('arroz')" id="arroz">
+                    <img width="100px" height="100px" srcset="http://cdn5.colorir.com/desenhos/color/201840/prato-de-arroz-comida-pao-e-pasta-1491314.jpg">
+            </section>
+
+            <section class="item" onclick="verificaSeFazParte('sabonete')" id="sabonete">
+                    <img width="100px" height="100px" srcset="https://gartic.com.br/imgs/mural/im/im_ad/sabonetinho.png">
+            </section>
+            <section class="item" onclick="verificaSeFazParte('feijao')" id="feijao">
+                    <img width="100px" height="100px" srcset="https://pngimage.net/wp-content/uploads/2018/05/feij%C3%A3o-desenho-png-1.png">
+            </section>
+            <section class="item" onclick="verificaSeFazParte('batata')" id="batata">
+                    <img width="100px" height="100px" srcset="https://i.pinimg.com/originals/ce/a9/45/cea9456f5209265287735247a028b242.jpg">
+            </section>
+
+                <input type="text" class="resultado" disabled placeholder="Resultado" id="resultadosabonete" >
+        </div>
+    </div>
+    
+</body>
+</html>
